@@ -9,7 +9,7 @@ coll = db['reviews']
 
 user_ids, biz_ids = {}, {}
 
-progress = ProgressBar.create(:title => "Reviews", starting_at: 0, total: coll.count)
+progress = ProgressBar.create(title: "Reviews", starting_at: 0, total: coll.count)
 
 coll.find.each do |review|
   user_id = (user_ids[review['user_id']] ||= user_ids.count)
